@@ -5,15 +5,15 @@ files:
     destination: /var/www/html/
 hooks:
   AfterInstall:
-    - location: server/install-packages.sh
+    location: Scripts/RunResourceTests.sh
       runas: root
+      timeout: 300
   ApplicationStart:
-    - location: scripts/start_server.sh
-    - location: scripts/create_test_db.sh
-      timeout: 900
+    - location: Scripts/RunFunctionalTests.sh
+      timeout: 600
       runas: root
-  ApplicationStop:
-    - location: scripts/stop_server.sh
+ ValidateService:
+    - location: Scripts/MonitorService.sh
       timeout: 900
       runas: root
    
