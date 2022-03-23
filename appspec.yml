@@ -14,7 +14,7 @@ hooks:
       runas: root
  ValidateService:
     - location: Scripts/MonitorService.sh
-      timeout: 900
+      timeout: 600
       runas: root
    
     
