@@ -3,19 +3,6 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/
-hooks:
-  AfterInstall:
-    location: Scripts/RunResourceTests.sh
-      runas: root
-      timeout: 300
-  ApplicationStart:
-    - location: Scripts/RunFunctionalTests.sh
-      timeout: 600
-      runas: root
- ValidateService:
-    - location: Scripts/MonitorService.sh
-      timeout: 600
-      runas: codedeployuser
    
     
 
